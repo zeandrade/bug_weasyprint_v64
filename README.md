@@ -14,7 +14,7 @@ source .venv/bin/activate
 python report_example.py
 ```
 
-Then, change de **pyproject.toml** to use weasyprint V63.1 and change the output file name in **report_example.py**
+Then, change de **pyproject.toml** to use weasyprint V64 and change the output file name in **report_example.py**
 
 ```bash
 
@@ -23,8 +23,9 @@ python report_example.py
 ```
 Compare the PDF output 😊
 
-#### with error
-![error](screenshot_error.png "Error")
 
 #### OK version
 ![ok](screenshot_ok.png "OK")
+
+#### with error
+![error](screenshot_error.png "Error")
