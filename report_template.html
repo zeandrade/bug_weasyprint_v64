@@ -1,0 +1,168 @@
+<html>  
+    <head>
+        <meta charset="utf-8">
+        <link href="report_styles.css" rel="stylesheet">
+        <title>Report {{main_data['idnum']}}</title>
+        <meta name="description" content="Report Example">
+        <meta name="author" content="Example">
+      </head>
+    
+    <body>
+        <article id="page1">
+            <div id="logo">&nbsp;</div>
+            <div id="tit_page1">
+            <h2>My awesome report</h2>
+            <h3>{{main_data['idnum']}}</h3>
+            </div>
+            <address>
+                MAIN/TITLE/SECTOR
+                Sample Avenue 1234
+                City State
+            </address>
+            <address>
+                mail@adress.example
+                https://website.example
+            </address>
+    </article> 
+    <article id="report">
+        <section id="top_class">
+            <div id="title_class">
+                <span class="title_line">Report Example</span><br />
+                <span class="sectors">MAIN/TITLE/SECTOR <span class=""><br />
+            </div>
+            <div id="idnum">
+                 ID <span class="highlighted">{{main_data['idnum']}}</span><br />    
+            </div>
+        </section>
+        <section id="starter">
+            <div class="main_data">
+                <div> <b>Url:</b> <span class="texto_ativo">{{main_data['url']}}</span></div>
+                <div> <b>Date:</b> {{main_data['date']}}</div>
+                <div> <b>System:</b> {{main_data['system']}}</div>
+            </div>
+        </section>
+
+        <section id="top_20_ip">
+            <h5>Example 20 lines</h5>
+            <table class="mytable">
+                <thead>
+                    <tr>
+                        <th>data 1</th><th>data 2</th><th>data 3</th><th>data 4</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for key_part, info in main_data['some_data'].items() %}
+                    <tr>
+                        <td >{{key_part}}</td><td>{{info[0]}}</td><td>{{info[1]}}</td><td>{{info[2]}}</td>  
+                    </tr>
+                    {%endfor%}
+                </tbody>
+            </table>
+        </section>
+        <section id="charts_access" >
+            
+            <h5>Charts</h5>
+            
+            <div class="container rowx">
+                <div class="box_chart">
+                    <img src="file:///tmp/chart1.svg" />
+                </div>
+                <div class="box_chart">
+                    <img src="file:///tmp/chart2.svg" />
+                </div>
+            </div>
+            <div class="container rowx">
+                <div class="box_chart">
+                    <svg width="24px" height="24px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" color="#000000" stroke-width="1.5"><rect width="7" height="5" rx="0.6" transform="matrix(1 0 0 -1 3 22)" fill="#000000" stroke="#000000" stroke-width="1.5" stroke-width="1.5"></rect><rect width="7" height="5" rx="0.6" transform="matrix(1 0 0 -1 8.5 7)" fill="#000000" stroke="#000000" stroke-width="1.5" stroke-width="1.5"></rect><rect width="7" height="5" rx="0.6" transform="matrix(1 0 0 -1 14 22)" fill="#000000" stroke="#000000" stroke-width="1.5" stroke-width="1.5"></rect><path d="M6.5 17V13.5C6.5 12.3954 7.39543 11.5 8.5 11.5H15.5C16.6046 11.5 17.5 12.3954 17.5 13.5V17" stroke="#000000" stroke-width="1.5"></path><path d="M12 11.5V7" stroke="#000000" stroke-width="1.5"></path></svg>  Some Text
+                </div>
+                <div class="box_chart">
+                    <svg width="24px" height="24px" stroke-width="1.5" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" color="#000000"><path d="M5 12V18C5 18 5 21 12 21C19 21 19 18 19 18V12" stroke="#000000" stroke-width="1.5"></path><path d="M5 6V12C5 12 5 15 12 15C19 15 19 12 19 12V6" stroke="#000000" stroke-width="1.5"></path><path d="M12 3C19 3 19 6 19 6C19 6 19 9 12 9C5 9 5 6 5 6C5 6 5 3 12 3Z" stroke="#000000" stroke-width="1.5"></path></svg> Some Text
+                </div>
+            </div>
+        </section>
+
+   
+        
+        <section id="chart_time">
+            <h5>Chart title</h5>
+
+            <div class="box_chart_time">
+                <img src="file:///tmp/chart_example.svg" />
+            </div>
+        </section>
+    
+
+        <section id="any">
+            <h5>Other stuff</h5>
+
+            <div class="box">
+                <ul>
+                    <li>Hi</li>
+                    <li>Hello</li>
+                    <li>Bye</li>
+                </ul>
+            </div>
+        </section>
+    </article>
+    <article id="page1_ips">
+        <h2>Details</h2>
+        <h3>list of some items</h3>
+        <ul>
+            {% for  data_x in dataset1 %}
+            <li><a href="#title_{{data_x['str_x']}}"></a></li>
+            {% endfor %}
+        </ul>
+    </article>
+    {% for data_x in dataset1 %}
+    <article id="ip_{{data_x['str_x']}}">
+        
+        <section id="starter_{{data_x['str_x']}}">
+            <div class="container rowx">
+                <div class="main_data-40 ip-box">
+                    <h1 id="title_{{data_x['str_x']}}">{{data_x['ip']}}</h1>
+                    <p class="icon_text"><svg width="24px" height="24px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" color="#000000" stroke-width="1.5"><rect width="7" height="5" rx="0.6" transform="matrix(1 0 0 -1 3 22)" fill="#000000" stroke="#000000" stroke-width="1.5" stroke-width="1.5"></rect><rect width="7" height="5" rx="0.6" transform="matrix(1 0 0 -1 8.5 7)" fill="#000000" stroke="#000000" stroke-width="1.5" stroke-width="1.5"></rect><rect width="7" height="5" rx="0.6" transform="matrix(1 0 0 -1 14 22)" fill="#000000" stroke="#000000" stroke-width="1.5" stroke-width="1.5"></rect><path d="M6.5 17V13.5C6.5 12.3954 7.39543 11.5 8.5 11.5H15.5C16.6046 11.5 17.5 12.3954 17.5 13.5V17" stroke="#000000" stroke-width="1.5"></path><path d="M12 11.5V7" stroke="#000000" stroke-width="1.5"></path></svg> <b>Requests:</b> {{data_x['reqs']}}</p>
+                    <p class="icon_text"><svg width="24px" height="24px" stroke-width="1.5" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" color="#000000"><path d="M5 12V18C5 18 5 21 12 21C19 21 19 18 19 18V12" stroke="#000000" stroke-width="1.5"></path><path d="M5 6V12C5 12 5 15 12 15C19 15 19 12 19 12V6" stroke="#000000" stroke-width="1.5"></path><path d="M12 3C19 3 19 6 19 6C19 6 19 9 12 9C5 9 5 6 5 6C5 6 5 3 12 3Z" stroke="#000000" stroke-width="1.5"></path></svg><b>Volume:</b>{{data_x['bytes']}}</p>
+                </div>
+                <div class="main_data-60">
+                    <h5> Some Title </h5>
+                    {%if data_x['extra'].keys()|length > 0 %}
+                    <div class="info_data_contact">
+                        <p class="med"><b>Net:</b> {{data_x['net'] }} | <b>Doc:</b> {{ data_x['doc'] }}</p>
+
+                        {% for key_b, value_b in data_x['extra'].items() %}
+                        <div>
+                            {% if 'a' in value_b %}<p class="mini"><u>Item a:</u> {{value_b['a']}}</p>{% endif %}
+                            {% if 'b' in value_b %}<p class="mini"><u>Item b:</u> {{value_b['b']}}</p>{% endif %}
+                            {% if 'c' in value_b %}<p class="mini"><b>Item c:{{value_b['c']}}</b>{% endif %}
+                        </div>
+                        {% endfor %}
+                        <p class="mini2"> Some observation here.</p>
+                    </div>
+                    
+                    {% endif %}
+                </div>
+              
+            </div>
+    
+            <br /><h4>Some text here</h4>
+            <div class="container rowx">
+               
+                <div>
+                    <em>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus in libero aliquam, imperdiet lacus at, finibus lorem. Aenean velit lectus, condimentum ac augue ac, blandit pellentesque tortor. Sed finibus felis mattis molestie commodo. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Integer ut nibh diam. Nulla diam ligula, posuere a dolor vitae, placerat vehicula quam. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec sed dui augue.</em>
+
+                    <blockquote>Sed non lectus vel urna malesuada interdum. Fusce pulvinar, ipsum in sagittis aliquam, urna dui bibendum elit, et porta tortor augue id tellus. Vestibulum vel elit vel augue tincidunt tempor. Nullam eget imperdiet velit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse eget purus urna. Etiam sed scelerisque odio. Aliquam at lacinia purus, quis condimentum est. </blockquote>
+                    
+                </div>
+            </div>       
+        </section>  
+        <section class"chart_time2">
+            <h5>Other chat</h5>
+            <div>
+                <img src="file:///tmp/chart_example2.svg" />
+            </div>
+        </section>
+    </article>
+    {% endfor %}
+    </body>
+
+</html>
