@@ -9,6 +9,7 @@ def make_report(file_output='report.pdf'):
         'idnum': 1234567,
         'url': 'https://example.website',
         'date': '04/02/2025',
+        'system': 'Super Tool 1.0',
         'some_data':{
             'identifier_1':['item x','some info', 'etc'],
             'identifier_2':['item y','some info', 'etc'],
