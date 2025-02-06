@@ -1,4 +1,9 @@
 ### DEMO BUG Weasyprint V64
+<div style="background-color:#ffeeaa; padding:20px; margin:0px auto;font-size:20pt;">
+ 🎉 Fixed in Version 64.1
+</div>
+
+
 
 - I used  sample report from <https://weasyprint.org/> as the basis for this template
 - To simulate this bug, use Linux (Ubuntun, Debian, Fedora etc.)
